@@ -1,0 +1,10 @@
+<h1>Fighters</h1>
+
+<ul>
+  <% @fighters.each do |fighter| %>
+    <li><%= fighter.name %></li>
+  <% end %>
+</ul>
+
+
+    <%= render "shared/footer" %>

@@ -1,1 +1,52 @@
 // Specific CSS for your home-page
+
+.container{
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  padding: 0px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .bg{
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .bg .content{
+  width: 50%;
+  height: 100%;
+}
+
+.container .bg .content h2{
+  font-size: 4em;
+  letter-spacing: 1px;
+}
+
+.container .bg .content{
+  font-size: 1em;
+  letter-spacing: 1px;
+}
+
+.container .bg .content a{
+  color: black;
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 20px 0;
+  border: 3px solid black;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 5px;
+  letter-spacing: 1px;
+}
+
+.container .bg .content a:hover{
+  background: yellow;
+  color: black;
+}
