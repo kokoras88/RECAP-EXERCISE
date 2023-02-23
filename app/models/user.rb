@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :fighters, through: :set_fighter
 
   validates :name, presence: true
+  validates :name, presence: true
 end
