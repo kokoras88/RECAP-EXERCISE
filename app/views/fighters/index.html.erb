@@ -1,13 +1,13 @@
 <h1>Fighters</h1>
 
-<ul>
+
   <% @fighters.each do |fighter| %>
-    <li><%= fighter.name %></li>
-    <li><%= fighter.side %></li>
-    <%= cl_image_tag @fighter.photo.key, height: 300, width: 400, crop: :fill %>
+    <h1>Name: <%= fighter.name %> </h1>  <h2>Side:<%= fighter.side %></h2>
+
+    <%= cl_image_tag fighter.photo.key, height: 300, width: 400, crop: :fill %>
     <%= link_to "Show this fighter", fighter %>
   <% end %>
-</ul>
+
 
 <%= link_to "Create new fighter", new_fighter_path, {class: "btn btn-primary"} %>
 

@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :fighters, through: :set_fighter
 
-  validates :name, presence: true
-  validates :name, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+
 end
