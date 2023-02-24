@@ -1,7 +1,15 @@
 <h1>Fighter</h1>
-<%= @fighter.name %>
-<%= @fighter.side %>
-<%= cl_image_tag @fighter.photo.key, height: 300, width: 400, crop: :fill %>
+<div class="fighter">
+  <%= @fighter.name %>
+  <%= @fighter.side %>
+  <%= cl_image_tag @fighter.photo.key, height: 300, width: 400, crop: :fill %>
+</div>
 
 <br>
 <%= link_to "update your fighter", edit_fighter_path,  {class: "btn btn-primary"}  %>
+<%# <%= link_to "delete your fighter", fighter_path(@fighter) {class: "btn btn-primary"}  %>
+
+    <%= link_to "Delete",
+      fighter_path(@fighter),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure for this madness??"},class: "btn btn-flat me-3" %>
+    <%= link_to "Back to fighters", fighters_path, {class: "btn btn-primary"} %>

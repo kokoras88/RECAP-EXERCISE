@@ -2,6 +2,11 @@ class FightersController < ApplicationController
   before_action :set_fighter, only: [:show, :edit, :update, :destroy]
   def index
     @fighters = Fighter.all
+    if params[:query].present?
+      @fighters = Fighter.where(name: params[:query])
+    else
+      @fighters = Fighter.all
+    end
   end
 
   def show
@@ -25,6 +30,11 @@ class FightersController < ApplicationController
 
   def update
     @fighter.update(fighter_params)
+  end
+
+  def destroy
+    @fighter.destroy
+    redirect_to fighters_path, status: :see_other
   end
 
   private

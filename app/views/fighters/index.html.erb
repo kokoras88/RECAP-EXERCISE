@@ -1,16 +1,31 @@
 <h1>Fighters</h1>
 
+<%= form_with url: fighters_path, method: :get, class: "d-flex" do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a warrior"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
 
+<div class='w-75 m-4'>
+  <div class="d-flex flex-row flex-wrap">
   <% @fighters.each do |fighter| %>
-    <h1>Name: <%= fighter.name %> </h1>  <h2>Side:<%= fighter.side %></h2>
-
-    <%= cl_image_tag fighter.photo.key, height: 300, width: 400, crop: :fill %>
-    <%= link_to "Show this fighter", fighter %>
+    <div class="fighter">
+      <h1>Name: <%= fighter.name %> </h1>
+      <h2>Side: <%= fighter.side %></h2>
+      <%= cl_image_tag fighter.photo.key, height: 250, width: 300, crop: :fill %>
+      <br>
+      <%= link_to "Show this fighter", fighter, {class: "btn btn-primary"} %>
+    </div>
   <% end %>
+  </div>
+</div>
 
 
 <%= link_to "Create new fighter", new_fighter_path, {class: "btn btn-primary"} %>
 
 <hr>
 
- <%= render "shared/footer" %>
+<%= render "shared/footer" %>
